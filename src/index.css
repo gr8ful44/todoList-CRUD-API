@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sofia Sans', 'IBM Plex Sans Thai', serif;
+  background: linear-gradient(122deg, #385bb3 0%, #10217d 80%);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 6px 0px 2px 6px;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  pointer-events: none;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  border: 10px solid lightgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginpage,
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lititle {
+  font-size: 2rem;
+  padding: 6px 20px;
+  border-radius: 4px;
+}
+
+.form {
+  margin-top: 1.4rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wp {
+  position: relative;
+}
+
+.lilabel {
+  font-size: 16px;
+  pointer-events: none;
+  letter-spacing: .4mm;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  border-radius: 3px;
+}
+
+.input:focus~.lilabel,
+.input:valid~.lilabel {
+  font-size: 13px;
+  padding: 0 5px;
+  transform: translate(-2px, -18px);
+  background-color: lightgreen;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  transition: .4s;
+}
+
+.submit {
+  margin-top: 1rem;
+  font-size: 14px;
+  width: 100%;
+  padding: 6px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: .3mm;
+}
+
+.main {
+  width: min(100%, 1024px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.todo {
+  display: flex;
+  gap: 11px;
+  padding: 4px 5px;
+  border: 2px #000 solid;
+}
+
+.todow {
+  position: relative;
+  display: grid;
+  width: fit-content;
+}
+
+.input {
+  border-radius: 4px;
+  background-color: #ececec;
+  font-size: 18px;
+  caret-color: red;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.input:focus {
+  border: #000;
+  box-shadow: 0 0 0 .1em lightgreen,
+    0 0 0 .2em lightseagreen;
+}
+
+.label {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  transform: translateY(20%);
+  font-size: 16px;
+  letter-spacing: .4mm;
+}
+
+.input:focus~.label,
+.input:valid~.label {
+  font-size: 13px;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: #000;
+  transition: .3s;
+  transform: translate(-4px, -15px);
+  background-color: lightgreen;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.addbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 0 8px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fcff65;
+  box-shadow: 0 0 0 .1em rgb(148, 148, 148),
+    0 0 0 .2em rgb(255, 255, 255);
+}
+
+.addbtn:hover {
+  transform: rotate3d(0, 1, 0, 180deg);
+  transition: 1s;
+}
+
+.plusbtn {
+  color: #fff;
+  background-color: rgb(131, 154, 255);
+}
+
+.todolist {
+  color: #ececec;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btnbox,
+.editbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnbox {
+  gap: 4px;
+}
+
+.editbtn {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.editBtn {
+  background-color: #83ff8c;
+}
+
+.delBtn {
+  background-color: #ff8a41;
+}
+
+.editBtn:hover {
+  color: #fff;
+  border: #000;
+  background-color: #25ff34;
+  box-shadow: 0 0 0 .1em rgb(83, 255, 100),
+    0 0 0 .1em rgb(71, 255, 89);
+  transition: .3s ease;
+}
+
+.delBtn:hover {
+  color: #fff;
+  border: #000;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0 0 0 .1em rgba(255, 0, 0, 0.6),
+    0 0 0 .1em rgb(255, 0, 0);
+  transition: .3s ease;
+}
+
+/* edit */
+[role="dialog"] {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  padding-inline: 2vmax;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+[role="dialog"] .todo {
+  max-width: 40ch;
+  padding: 2em 1.3em 1.3em;
+  border-radius: 10px;
+  border: 0.1em solid #bfbfbf;
+  background-color: #313131;
+  box-shadow: 3px 3px 20px rgba(193, 193, 193, 0.3);
+}
+
+.udbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0 3px;
+  background-color: #4df06d;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.udlabel {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(4px);
+}
+
+.input:focus~.udlabel,
+.input:valid~.udlabel {
+  font-size: 13px;
+  padding: 0 6px;
+  border-radius: 4px;
+  color: #000;
+  transition: .3s;
+  transform: translate(0px, -15px);
+  background-color: lightgreen;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
