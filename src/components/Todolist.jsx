@@ -3,7 +3,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Todolist({ title, del, id, edh }) {
    return (
-      <div className="todolist">
+      <div className="todolist checkbox-wrapper-11">
          <input type="checkbox" name="checkbox" id="checkbox" />
          <div>
             <div>{title}</div>

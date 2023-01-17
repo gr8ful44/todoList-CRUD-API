@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useEffect, useState } from "react";
 import Todolist from "../components/Todolist";
 import Update from "../components/Update";
@@ -5,9 +6,11 @@ import Update from "../components/Update";
 function Todo() {
    const [todo, setTodo] = useState([]);
    const [task, setTask] = useState("");
-   const token = localStorage.getItem("bearer");
-
+   const [form, setForm] = useState(false);
    const [isEditing, setEditing] = useState(false);
+
+   const token = localStorage.getItem("bearer");
+   const ref = useRef();
 
    const getData = async () => {
       let headersList = {
@@ -60,6 +63,8 @@ function Todo() {
             headers: headersList,
          }
       );
+      setForm(true);
+      if (form) ref.current?.reset();
       setTask("");
       getData();
    };
@@ -70,13 +75,12 @@ function Todo() {
 
    useEffect(() => {
       getData();
-      // if todo is update > re-render.
    }, []);
 
    return (
       <div className="main">
-         <h1>🔥</h1>
-         <form className="todo" onSubmit={add}>
+         <h1 className="fire">🔥</h1>
+         <form className="todo" ref={ref} onSubmit={add}>
             <div className="ipw todow">
                <input
                   type="text"
@@ -85,7 +89,7 @@ function Todo() {
                   onChange={(e) => setTask(e.target.value)}
                />
                <label htmlFor="task" className="label">
-                  enter something..
+                  tell me your secret..
                </label>
             </div>
             <button className="addbtn">+</button>
