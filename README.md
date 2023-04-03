@@ -1,4 +1,4 @@
-# todo-nv-situp-project
+# todoList-CRUD-API-project
 To get a project up and running :
 1. Download ZIP from this project.
 2. Open the unzipped folder in your code editor.
